@@ -1,0 +1,77 @@
+.carousel {
+	margin-bottom: 3em;
+}
+
+.js .carousel {
+	max-width: 795px;
+	position: relative;
+}
+
+.carousel ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.carousel li {
+	border-top: 8px solid #0066a4;
+	float: left;
+	margin: 0 1.403887689% 1em 0; /* 13 of 926 */
+	max-width: 15.785714286em; /* 221px */
+	min-height: 15.5em; /* 217px */
+	padding: 0;
+	width: 23.866090713%; /* 221 of 926 */
+}
+
+.carousel li:nth-child(4n) {
+	margin-right: 0;
+}
+
+.carousel li:nth-child(4n+1) {
+	clear: left;
+}
+
+.carousel a,
+.carousel img {
+	display: block;
+	width: 100%;
+}
+
+.carousel a {
+	font-size: 1.285714286em; /* 18px */
+	line-height: 1.222222222; /* 22px */
+	margin: 0;
+}
+
+.carousel img {
+	margin-bottom: 0.5em; /* 7px */
+}
+
+
+.carousel .controls {
+	position: absolute;
+	right: 0;
+	top: 0.7em;
+}
+
+.carousel button {
+	background: transparent;
+	border: 0;
+	color: #0066a4;
+	float: right;
+	font: 14px/1.142857143 georgia, 'times new roman', times, serif;
+	padding: 0 0 0 1em;
+	text-align: left;
+}
+
+.carousel button[disabled] {
+	display: none;
+}
+
+.carousel button.prev:before {
+	content: '«';
+}
+
+.carousel button.next:after {
+	content: '»';
+}
