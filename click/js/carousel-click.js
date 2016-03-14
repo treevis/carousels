@@ -1,20 +1,20 @@
-/* Carousel */
-(function() {
+// Carousel, Click Version
+(function($, undefined) {
 
-	var $onlineExtras = $('.carousel');
-	if( !$onlineExtras.length ) {
+	var $carousel = $('.carousel');
+	if( !$carousel.length ) {
 		return;
 	}
-
-	var $onlineExtraItems = $onlineExtras.find('li'),
-		onlineExtraItemsLength = $onlineExtraItems.length;
-		startPoint = 0;
-		endPoint = 3;
-		slices = Math.ceil( (onlineExtraItemsLength/4) );
+	
+	var $carouselItem = $carousel.find('li'),
+		carouselItemLength = $carouselItem.length,
+		startPoint = 0,
+		endPoint = 3,
+		slices = Math.ceil( (carouselItemLength/4) ),
 		currentSlice = 1;
 
-	console.log( 'slices: ' + slices );
-	console.log( 'startingSlice: ' + currentSlice );
+	// console.log( 'slices: ' + slices );
+	// console.log( 'startingSlice: ' + currentSlice );
 
 	function addControls() {
 		var $buttons = $('<div class="controls"><button type="button" class="next">Next</button><button type="button" class="prev" disabled="disabled">Previous</button></div>');
@@ -61,34 +61,32 @@
 
 	function updateItems() {
 		endPoint = (currentSlice * 4) - 1;
-		console.log( 'endpoint: ' + endPoint );
+		// console.log( 'endpoint: ' + endPoint );
 	
 		startPoint = endPoint - 3;
-		console.log( 'startpoint: ' + startPoint );
+		// console.log( 'startpoint: ' + startPoint );
 	
-		for( var i=0; i < onlineExtraItemsLength; i++ ) {
+		for( var i=0; i < carouselItemLength; i++ ) {
 			if( i >= startPoint && i <= endPoint ) {
-				$onlineExtraItems.eq(i).css("display", "block");
+				$carouselItem.eq(i).removeClass('invisible').addClass('visible');
 			}
 			else {
-				$onlineExtraItems.eq(i).css("display", "none");
+				$carouselItem.eq(i).removeClass('visible').addClass('invisible');
 			}
 		}
 	}
 
 	function init() {
-	
-		$('html').addClass('js').removeClass('no-js');
-	
+		$('html').addClass('js');
+		
 		if( slices > 1 ) {
 			var $buttons = addControls();
-			$onlineExtras.append( $buttons );
-			for( var i=4; i < onlineExtraItemsLength; i++ ) {
-				$onlineExtraItems.eq(i).css("display", "none");
+			$carousel.append( $buttons );
+			for( var i=4; i < carouselItemLength; i++ ) {
+				$carouselItem.eq(i).removeClass('visible').addClass('invisible');
 			}
 		}
-	
 	}
 
 	init();
-})();
+})(jQuery);

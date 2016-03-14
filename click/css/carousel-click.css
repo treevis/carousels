@@ -51,7 +51,7 @@
 .carousel .controls {
 	position: absolute;
 	right: 0;
-	top: 0.7em;
+	top: -2em;
 }
 
 .carousel button {
@@ -74,4 +74,12 @@
 
 .carousel button.next:after {
 	content: '»';
+}
+
+.js .carousel .visible {
+	display: block;
+}
+
+.js .carousel .invisible {
+	display: none;
 }
