@@ -1,54 +1,51 @@
-body {
-	padding-left: 4em;
-	padding-right: 4em;
+.carousel {
+	margin-bottom: 3em;
 }
-#nav {
-	position: relative;
-	width: 72em;
-}
-#nav .prev {
-	position: absolute;
-	left: -1.5em;
-}
-#nav .next {
-	position: absolute;
-	right: -1.5em;
-}
-#nav li {
-	font-size: 2em;
-	list-style: none;
-}
-#nav a { text-decoration: none; }
-#nav a:hover { text-decoration: none; }
 
-#content {
+.js .carousel {
+	box-sizing: border-box;
+	max-width: 795px;
+	padding-left: 2em;
+	padding-right: 2em;
+	position: relative;
+	width: 100%;
+}
+
+.carousel ul {
+	list-style: none;
 	margin: 0;
 	padding: 0;
 }
-#content.fancy {
-	height: 18em;
+
+.js .carousel ul {
 	overflow: hidden;
+	padding-bottom: 1em;
 	position: relative;
-	width: 72em;
 }
-#content li {
+
+.carousel li {
+	border-top: 8px solid #0066a4;
 	float: left;
-	list-style: none;
-	margin: 0 0 3em;
-	min-height: 15em;
-	padding-right: 2em;
-	padding-top: 0.75em;
-	width: 22em;
+	margin: 0 1.403887689% 1em 0; /* 13 of 926 */
+	max-width: 15.785714286em; /* 221px */
+	min-height: 15.5em; /* 217px */
+	padding: 0;
+	width: 23.866090713%; /* 221 of 926 */
 }
-#content h2 {
-	font-size: 1.5em;
-	line-height: 1.2;
-	margin: 0 0 0.5em;
+
+.js .carousel li {
+	float: none;
+	margin-bottom: 0;
+	position: absolute;
+	top: 0;
 }
-#content p {
-	font-size: 1.2em;
-	line-height: 1.5;
-	margin: 0 0 1em;
+
+.carousel li:nth-child(4n) {
+	margin-right: 0;
+}
+
+.carousel li:nth-child(4n+1) {
+	clear: left;
 }
 
 .carousel a,
@@ -65,5 +62,36 @@ body {
 
 .carousel img {
 	margin-bottom: 0.5em; /* 7px */
-	max-width: 221px;
+}
+
+
+
+.js .controls {
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.js .controls button {
+	background: transparent;
+	border: 0;
+	color: #0066a4;
+	cursor: pointer;
+	font: 2em/1.142857143 georgia, 'times new roman', times, serif;
+	padding: 0;
+	position: absolute;
+	text-align: left;
+}
+
+.js .controls button[disabled] {
+	color: #999;
+	cursor: auto;
+}
+
+.js .controls .prev {
+	left: -1em;
+}
+
+.js .controls .next {
+	right: -1em;
 }
